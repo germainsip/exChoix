@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.afpa.gui.ChoixController">
+   <children>
+      <VBox layoutX="-3.0">
+         <children>
+            <HBox spacing="60.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="160.0" prefWidth="273.0" spacing="35.0">
+                     <children>
+                        <TextField fx:id="champAremplir" onKeyReleased="#afficheTexte" />
+                        <Label fx:id="textQuiChange" />
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="choixBox" visible="false">
+                     <children>
+                        <JFXToggleButton fx:id="fondButt" onAction="#activeMenu" text="Couleur du fond" />
+                        <JFXToggleButton fx:id="textButt" onAction="#activeMenu" text="Couleur du texte" />
+                        <JFXToggleButton fx:id="casseButt" onAction="#activeMenu" text="Choix de la casse" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="radioBox" alignment="CENTER" spacing="100.0" visible="false">
+               <children>
+                  <VBox fx:id="radioFond" disable="true" prefHeight="129.0" spacing="15.0">
+                     <children>
+                        <Label text="Fond" />
+                        <JFXRadioButton fx:id="fondRed" onAction="#activeMenu" text="rouge">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="fondGrp" />
+                           </toggleGroup></JFXRadioButton>
+                        <JFXRadioButton fx:id="fondBlue" layoutX="10.0" layoutY="27.0" onAction="#activeMenu" text="bleu" toggleGroup="$fondGrp" />
+                        <JFXRadioButton fx:id="fondGreen" layoutX="10.0" layoutY="44.0" onAction="#activeMenu" text="vert" toggleGroup="$fondGrp" />
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="radioTexte" disable="true" layoutX="10.0" layoutY="10.0" spacing="15.0">
+                     <children>
+                        <Label text="Texte" />
+                        <JFXRadioButton fx:id="textRed" onAction="#activeMenu" text="rouge">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="textGrp" />
+                           </toggleGroup></JFXRadioButton>
+                        <JFXRadioButton fx:id="textBlue" layoutX="10.0" layoutY="27.0" onAction="#activeMenu" text="bleu" toggleGroup="$textGrp" />
+                        <JFXRadioButton fx:id="textGreen" layoutX="10.0" layoutY="44.0" onAction="#activeMenu" text="vert" toggleGroup="$textGrp" />
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="radioCasse" disable="true" layoutX="156.0" layoutY="10.0" spacing="15.0">
+                     <children>
+                        <Label text="Casse" />
+                        <JFXRadioButton fx:id="casseMaj" onAction="#activeMenu" text="majuscule">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="casseGrp" />
+                           </toggleGroup></JFXRadioButton>
+                        <JFXRadioButton fx:id="casseMin" layoutX="10.0" layoutY="27.0" onAction="#activeMenu" text="minuscule" toggleGroup="$casseGrp" />
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</AnchorPane>
